@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cypher</string>
+    <string name="btnEncode">Encode</string>
+    <string name="textInputClear">Input a message</string>
+</resources>
