@@ -25,7 +25,7 @@ public class BreakCode {
 
     private void trim(int[] codeInt) {
         for (int x = 0; x < codeInt.length; x = x + 1) {
-            if (codeInt[x]< 0) {
+            if (codeInt[x]<= 0) {
                 codeInt[x] = codeInt[x] + 26;
             }
         }
@@ -96,7 +96,7 @@ public class BreakCode {
                 }
             }
             copyShift = copyShift+1;
-            message = message+" , ";
+            message = message+", ";
         }
         return  message;
     }
