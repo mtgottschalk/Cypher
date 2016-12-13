@@ -5,8 +5,8 @@ package com.example.leoth_000.cypher;
  */
 
 public class Encoder {
-  public static  String clearText;
-    public static int shift;
+  private static  String clearText;
+    private static int shift;
    public int[] codedText;
 
     public String getClearText() {
@@ -38,93 +38,95 @@ public class Encoder {
         this.clearText = clearText;
         this.shift = shift;
     }
-    public int[] encode(String clearText){
-        clearText.toLowerCase();
-        for(int i = 1; i < clearText.length(); i=i+1){
-            char letter = clearText.charAt(i);
+    public int[] encode(){
+        String copyText = this.getClearText();
+        int copyShift = this.getShift();
+        copyText.toLowerCase();
+        for(int i = 1; i < copyText.length(); i=i+1){
+            char letter = copyText.charAt(i);
             if (letter == 'a'){
-                codedText[i]= 1+shift;
+                codedText[i]= 1+copyShift;
             }
             else if(letter == 'b'){
-                codedText[i] = 2+shift;
+                codedText[i] = 2+copyShift;
             }
             else if(letter == 'c'){
-                codedText[i] = 3+shift;
+                codedText[i] = 3+copyShift;
             }
             else if(letter == 'd'){
-                codedText[i] = 4+shift;
+                codedText[i] = 4+copyShift;
             }
             else if(letter == 'e'){
-                codedText[i] = 5+shift;
+                codedText[i] = 5+copyShift;
             }
             else if(letter == 'f'){
-                codedText[i] = 6+shift;
+                codedText[i] = 6+copyShift;
             }
             else if(letter == 'g'){
-                codedText[i] = 7+shift;
+                codedText[i] = 7+copyShift;
             }
             else if(letter == 'h'){
-                codedText[i] = 8+shift;
+                codedText[i] = 8+copyShift;
             }
             else if(letter == 'i'){
-                codedText[i] = 9+shift;
+                codedText[i] = 9+copyShift;
             }
             else if(letter == 'j'){
-                codedText[i] = 10+shift;
+                codedText[i] = 10+copyShift;
             }
             else if(letter == 'k'){
-                codedText[i] = 11+shift;
+                codedText[i] = 11+copyShift;
             }
             else if(letter == 'l'){
-                codedText[i] = 12+shift;
+                codedText[i] = 12+copyShift;
             }
             else if(letter == 'm'){
-                codedText[i] = 13+shift;
+                codedText[i] = 13+copyShift;
             }
             else if(letter == 'n'){
-                codedText[i] = 14+shift;
+                codedText[i] = 14+copyShift;
             }
             else if(letter == 'o'){
-                codedText[i] = 15+shift;
+                codedText[i] = 15+copyShift;
             }
             else if(letter == 'p'){
-                codedText[i] = 16+shift;
+                codedText[i] = 16+copyShift;
             }
             else if(letter == 'q'){
-                codedText[i] = 17+shift;
+                codedText[i] = 17+copyShift;
             }
             else if(letter == 'r'){
-                codedText[i] = 18+shift;
+                codedText[i] = 18+copyShift;
             }
             else if(letter == 's'){
-                codedText[i] = 19+shift;
+                codedText[i] = 19+copyShift;
             }
             else if(letter == 't'){
-                codedText[i] = 20+shift;
+                codedText[i] = 20+copyShift;
             }
             else if(letter == 'u'){
-                codedText[i] = 21+shift;
+                codedText[i] = 21+copyShift;
             }
             else if(letter == 'v'){
-                codedText[i] = 22+shift;
+                codedText[i] = 22+copyShift;
             }
             else if(letter == 'w'){
-                codedText[i] = 23+shift;
+                codedText[i] = 23+copyShift;
             }
             else if(letter == 'x'){
-                codedText[i] = 24+shift;
+                codedText[i] = 24+copyShift;
             }
             else if(letter == 'y'){
-                codedText[i] = 25+shift;
+                codedText[i] = 25+copyShift;
             }
             else if(letter == 'z'){
-                codedText[i] = 26+shift;
+                codedText[i] = 26+copyShift;
             }
         }
         trim(codedText);
         return codedText;
     }
-    void trim(int[] codedText){
+   private void trim(int[] codedText){
         for (int x:codedText){
             if(codedText[x]>26){
                 codedText[x] = 26 % codedText[x];

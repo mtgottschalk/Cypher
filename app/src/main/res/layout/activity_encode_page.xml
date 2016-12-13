@@ -10,21 +10,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.leoth_000.cypher.EncodePage">
 
-    <Button
-        android:text="@string/btnEncode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="83dp"
-        android:id="@+id/btnEncode" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/btnEncode"
+        android:layout_toEndOf="@+id/editText_shift"
         android:layout_marginTop="204dp"
         android:id="@+id/txt_coded"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
@@ -34,9 +24,30 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="16dp"
         android:id="@+id/editText_clear"
-        android:hint="Enter a message" />
+        android:hint="Enter a message"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/btnEncode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/btnEncode"
+        android:layout_below="@+id/editText_clear"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText_shift"
+        android:hint="Key"
+        android:singleLine="false"
+        android:layout_alignTop="@+id/btnEncode"
+        android:layout_alignStart="@+id/editText_clear"
+        android:layout_toStartOf="@+id/btnEncode" />
 </RelativeLayout>
