@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.leoth_000.cypher.EncodePage">
+    tools:context="com.example.leoth_000.cypher.MainPage">
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:layout_marginTop="16dp"
-        android:id="@+id/editText_clear"
+        android:id="@+id/editText_user"
         android:hint="Enter a message"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:id="@+id/btnEncode"
-        android:layout_below="@+id/editText_clear"
+        android:layout_below="@+id/editText_user"
         android:layout_alignParentEnd="true" />
 
     <EditText
@@ -49,6 +49,22 @@
         android:hint="Key"
         android:singleLine="false"
         android:layout_alignTop="@+id/btnEncode"
-        android:layout_alignStart="@+id/editText_clear"
+        android:layout_alignStart="@+id/editText_user"
         android:layout_toStartOf="@+id/btnEncode" />
+
+    <Button
+        android:text="@string/btnDecode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnEncode"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btnDecode" />
+
+    <Button
+        android:text="@string/btnBreak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnDecode"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btnBreak" />
 </RelativeLayout>
