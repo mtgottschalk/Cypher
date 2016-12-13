@@ -12,6 +12,7 @@ public class MainPage extends AppCompatActivity {
     static String TAG = "MainEncode";
     Encoder myEncoder;
     Decoder myDecoder;
+    BreakCode myBreakCode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,9 +58,11 @@ public class MainPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "Break Clicked");
+                String output = "";
                 String userText = editUser.getText().toString();
-                int shiftInt = Integer.parseInt(editShift.getText().toString());
-                textCoded.setText("Break");
+                myBreakCode = new BreakCode(userText);
+                output = myBreakCode.breaker();
+                textCoded.setText(output);
             }
         });
     }

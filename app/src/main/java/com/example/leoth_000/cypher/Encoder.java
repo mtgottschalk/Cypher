@@ -39,6 +39,9 @@ public class Encoder {
         String copyText = this.getClearText();
         int copyShift = this.getShift();
         copyText.toLowerCase();
+        if (copyShift>26){
+            copyShift = copyShift % 26;
+        }
         for(int i = 0; i < copyText.length(); i=i+1){
             char letter = copyText.charAt(i);
             if (letter == 'a'){
