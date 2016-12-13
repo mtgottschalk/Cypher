@@ -28,14 +28,16 @@ public class EncodePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "Button Clicked");
+                String print = "";
                 String clearText = editClear.getText().toString();
                 int shiftInt = Integer.parseInt(editShift.getText().toString());
                 myEncoder = new Encoder(clearText,shiftInt);
                 myEncoder.encode();
                 int[] outCoded = myEncoder.getCodedText();
-               for (int x : outCoded){
-                   textCoded.setText("-"+outCoded[x]);
+               for (int x = 0; x < clearText.length(); x=x+1){
+                   print = print+outCoded[x]+" ";
                }
+                textCoded.setText(print);
             }
         });
     }

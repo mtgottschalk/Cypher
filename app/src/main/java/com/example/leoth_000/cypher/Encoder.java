@@ -29,20 +29,17 @@ public class Encoder {
         return codedText;
     }
 
-    public void setCodedText(int[] codedText) {
-        this.codedText = codedText;
-    }
-
     public Encoder(String clearText, int shift) {
 
         this.clearText = clearText;
         this.shift = shift;
+        codedText = new int[clearText.length()];
     }
     public int[] encode(){
         String copyText = this.getClearText();
         int copyShift = this.getShift();
         copyText.toLowerCase();
-        for(int i = 1; i < copyText.length(); i=i+1){
+        for(int i = 0; i < copyText.length(); i=i+1){
             char letter = copyText.charAt(i);
             if (letter == 'a'){
                 codedText[i]= 1+copyShift;
@@ -127,9 +124,9 @@ public class Encoder {
         return codedText;
     }
    private void trim(int[] codedText){
-        for (int x:codedText){
+        for (int x=0; x < codedText.length; x = x+1){
             if(codedText[x]>26){
-                codedText[x] = 26 % codedText[x];
+                codedText[x] = codedText[x] % 26;
             }
         }
     }
