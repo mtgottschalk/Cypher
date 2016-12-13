@@ -5,7 +5,7 @@ package com.example.leoth_000.cypher;
  */
 
 public class BreakCode {
-    public String codeText;
+    private String codeText;
     public int[] codeInt;
 
     public String getCodeText() {
@@ -34,10 +34,11 @@ public class BreakCode {
     public String breaker() {
         String message = "";
         int[] copyCode = codeInt;
+        int[] doubleCode = codeInt;
         int copyShift = 0;
-        while(copyShift <26) {
+        for (int k = 0; k<26;k = k+1){
             for (int i = 0; i<copyCode.length;i=i+1){
-                copyCode[i]=copyCode[i] - copyShift;
+                copyCode[i]=doubleCode[i] - copyShift;
             }
             trim(copyCode);
             for (int j = 0; j < copyCode.length; j = j + 1) {
