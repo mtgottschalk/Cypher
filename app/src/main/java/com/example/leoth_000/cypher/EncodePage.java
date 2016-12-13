@@ -17,6 +17,7 @@ public class EncodePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encode_page);
         Log.i(TAG, "Application is running!");
+        // Basic page to encode a message
 
        final EditText editClear = (EditText)(findViewById(R.id.editText_clear));
        final TextView textCoded = (TextView)(findViewById(R.id.txt_coded));
